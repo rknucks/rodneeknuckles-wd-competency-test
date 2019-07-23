@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  // Getting references to our form and input
+  // references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
-  // When the signup button is clicked, we validate the email and password are not blank
+  // When the signup button is clicked, checks if email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
@@ -21,7 +21,7 @@ $(document).ready(function() {
     passwordInput.val("");
   });
 
-  // Does a post to the signup route. If succesful, we are redirected to the members page
+  //  If succesful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
